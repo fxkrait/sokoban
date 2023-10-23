@@ -206,6 +206,134 @@ static char * target_xpm[] = {
 };
 ")
 
+(defconst sokoban-copper-xpm "\
+/* XPM */
+static char * target_xpm[] = {
+\"32 32 3 1\",
+\"  c None\",
+\". c black\",
+\"X c brown\",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+};
+")
+
+
+(defconst sokoban-wood-xpm "\
+/* XPM */
+static char * target_xpm[] = {
+\"32 32 4 1\",
+\"  c None\",
+\". c black\",
+\"g c green\",
+\"b c brown\",
+\"                                \",
+\"                                \",
+\"     .                          \",
+\"    .g.        .......          \",
+\"   .ggg.      .ggggggg.         \",
+\"  .ggggg.     .ggggggg.         \",
+\"  ..ggg..      ..ggg..          \",
+\"   .bbb.        .bbb.           \",
+\"   .bbb.        .bbb.           \",
+\"   .....        .....           \",
+\"                                \",
+\"           ..........           \",
+\"          .bbbbbbbbbb.          \",
+\"         .bbbbbbbbbbbb.         \",
+\"        .bbbbbbbbbbbbbb.        \",
+\"        .bbbbbbbbbbbbbb.        \",
+\"        .bbbbbbbbbbbbbb.        \",
+\"        .bbbbbbbbbbbbbb.        \",
+\"         .bbbbbbbbbbbb.         \",
+\"          .bbbbbbbbbb.          \",
+\"           ..........           \",
+\"                                \",
+\"     .                          \",
+\"    .g.        .......          \",
+\"   .ggg.      .ggggggg.         \",
+\"  .ggggg.     .ggggggg.         \",
+\"  ..ggg..      ..ggg..          \",
+\"   .bbb.        .bbb.           \",
+\"   .bbb.        .bbb.           \",
+\"   .....        .....           \",
+\"                                \",
+\"                                \",
+};
+")
+
+(defconst sokoban-water-xpm "\
+/* XPM */
+static char * target_xpm[] = {
+\"32 32 3 1\",
+\"  c None\",
+\". c black\",
+\"X c brown\",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"       .   .   .   .   .        \",
+\"      .X. .X. .X. .X. .X.       \",
+\"       .   .   .   .   .        \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+\"                                \",
+};
+")
+
 
 (defconst sokoban-wall-xpm "\
 /* XPM */
@@ -334,6 +462,8 @@ static char * target_xpm[] = {
 (defconst sokoban-floor ?\+)
 ;; note - space character in level file is also allowed to indicate floor
 (defconst sokoban-target ?\.)
+(defconst sokoban-copper ?\c)
+(defconst sokoban-wood ?\w)
 (defconst sokoban-wall ?\#)
 (defconst sokoban-block ?\$)
 (defconst sokoban-player ?\@)
@@ -354,6 +484,28 @@ static char * target_xpm[] = {
 (defvar sokoban-target-options
   `(((glyph
       [xpm :data ,sokoban-target-xpm])
+     ((mono-x mono-tty emacs-tty) ?\.)
+     (t ?\040))
+    ((color-x color-x)
+     (mono-x grid-x)
+     (color-tty color-tty))
+    (((glyph color-x) [1 1 0.5])
+     (color-tty "yellow"))))
+
+(defvar sokoban-copper-options
+  `(((glyph
+      [xpm :data ,sokoban-copper-xpm])
+     ((mono-x mono-tty emacs-tty) ?\.)
+     (t ?\040))
+    ((color-x color-x)
+     (mono-x grid-x)
+     (color-tty color-tty))
+    (((glyph color-x) [1 1 0.5])
+     (color-tty "yellow"))))
+
+(defvar sokoban-wood-options
+  `(((glyph
+      [xpm :data ,sokoban-wood-xpm])
      ((mono-x mono-tty emacs-tty) ?\.)
      (t ?\040))
     ((color-x color-x)
@@ -494,6 +646,10 @@ static char * target_xpm[] = {
 		   sokoban-floor-options)
                   ((= c sokoban-target)
 		   sokoban-target-options)
+                  ((= c sokoban-copper)
+		   sokoban-copper-options)
+                  ((= c sokoban-wood)
+		   sokoban-wood-options)
                   ((= c sokoban-wall)
 		   sokoban-wall-options)
                   ((= c sokoban-block)
@@ -585,11 +741,11 @@ static char * target_xpm[] = {
 		    (y (+ sokoban-y dy))
 		    (c (sokoban-get-floor x y)))
 	       (gamegrid-set-cell x y c)
-	       (if (eq c sokoban-target)
+	       (if (or (eq c sokoban-target)  (eq c sokoban-copper))
 		   (decf sokoban-done))
 	       (gamegrid-set-cell sokoban-x sokoban-y sokoban-block)
 	       (setq c (sokoban-get-floor sokoban-x sokoban-y))
-	       (if (eq c sokoban-target)
+	       (if (or (eq c sokoban-target)  (eq c sokoban-copper))
 		   (incf sokoban-done)))
 	     (setq sokoban-x (- sokoban-x dx))
 	     (setq sokoban-y (- sokoban-y dy))
@@ -612,7 +768,9 @@ static char * target_xpm[] = {
 	 (y (+ sokoban-y dy))
 	 (c (gamegrid-get-cell x y)))
     (cond ((or (eq c sokoban-floor)
-	       (eq c sokoban-target))
+	       (eq c sokoban-target)
+               (eq c sokoban-copper)
+               (eq c sokoban-wood))
 	   (gamegrid-set-cell sokoban-x
 			      sokoban-y
 			      (sokoban-get-floor sokoban-x
