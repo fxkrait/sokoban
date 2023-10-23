@@ -49,6 +49,22 @@
 ;; The levels and some of the pixmaps were
 ;; taken directly from XSokoban
 
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defun game-sound-42x ()
+  (interactive)
+ (start-process "mplayer" nil "mplayer" "/home/greghab/dev/external/forks/sokoban/music/10-21-23.webm")
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Code:
 
 (eval-when-compile
@@ -716,6 +732,7 @@ static char * target_xpm[] = {
   "Start a new game of Sokoban."
   (interactive)
   (setq sokoban-level 0)
+  (game-sound-42x)
   (sokoban-next-level))
 
 (put 'sokoban-mode 'mode-class 'special)
