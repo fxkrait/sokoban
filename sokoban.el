@@ -153,7 +153,7 @@ static char * target_xpm[] = {
 \"           .XXXXXXXX.           \",
 \"            .XXXXXX.            \",
 \"      ..     .XXXX.     ..      \",
-\"      .X.     .XX.     .X.      \",
+\"      .XXXXX. .XX.     .X.      \",
 \"      .XX.     ..     .XX.      \",
 \"      .XXX.          .XXX.      \",
 \"      .XXXX.        .XXXX.      \",
