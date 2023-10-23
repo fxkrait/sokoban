@@ -61,7 +61,18 @@
 (defun game-sound-42x ()
   (interactive)
  (start-process "mplayer"  nil  "mplayer" "/home/greghab/dev/external/forks/sokoban/music/10-21-23.webm" "-loop" "0" "-speed" "0.42")
-)
+ )
+
+(defun kill-game-sound ()
+  (interactive)
+ (start-process "killall"  nil  "killall" "killall" "mplayer")
+ )
+
+(defun sokoban-quit ()
+  "Start a new game of Sokoban."
+  (interactive)
+  (kill-game-sound)
+  (insert "q"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -414,6 +425,7 @@ static char * target_xpm[] = {
     (define-key map "n"	'sokoban-start-game)
     (define-key map "r"	'sokoban-restart-level)
     (define-key map "g"	'sokoban-goto-level)
+    (define-key map "q"	'sokoban-quit)
 
     (define-key map [left]	'sokoban-move-left)
     (define-key map [right]	'sokoban-move-right)
