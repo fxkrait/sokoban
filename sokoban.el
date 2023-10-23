@@ -182,7 +182,7 @@ static char * target_xpm[] = {
 static char * wall_xpm[] = {
 \"32 32 2 1\",
 \"  c white\",
-\". c SteelBlue\",
+\". c yellow4\",
 \" .............................. \",
 \". ............................ .\",
 \".. .......................... . \",
@@ -224,7 +224,7 @@ static char * block_xpm[] = {
 \"32 32 3 1\",
 \"  c None\",
 \". c black\",
-\"X c yellow\",
+\"X c pink\",
 \".............................   \",
 \".XXXXXXXXXXXXXXXXXXXXXXXXXXX.   \",
 \".XXXXXXXXXXXXXXXXXXXXXXXXXXX..  \",
