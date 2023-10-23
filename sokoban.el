@@ -60,7 +60,7 @@
 
 (defun game-sound-42x ()
   (interactive)
- (start-process "mplayer" nil "mplayer" "/home/greghab/dev/external/forks/sokoban/music/10-21-23.webm")
+ (start-process "mplayer"  nil  "mplayer" "/home/greghab/dev/external/forks/sokoban/music/10-21-23.webm" "-loop" "0" "-speed" "0.42")
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
