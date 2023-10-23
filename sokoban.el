@@ -72,7 +72,8 @@
   "Start a new game of Sokoban."
   (interactive)
   (kill-game-sound)
-  (insert "q"))
+  (read-only-mode)
+  (kill-buffer "*Sokoban*"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
